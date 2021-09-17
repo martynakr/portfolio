@@ -1,0 +1,65 @@
+@use "./partials/palette";
+@use "./modules/buttons.scss";
+@use "./modules/project-card.scss";
+@use "./partials/text-styles";
+@use "./mixins/mixins.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 90%;
+	margin: auto;
+
+	&--yellow {
+		background-color: palette.$yellow-bg-col;
+		background-image: url("./../img/h-02.svg"), url("./../img/i-03.svg");
+		background-repeat: no-repeat;
+		background-position: center center, right center;
+		background-size: 400% 400%;
+		margin-top: 2vw;
+		margin-bottom: 2vw;
+		width: 96%;
+	}
+}
+
+nav {
+	@extend %nav-text;
+	padding: 30px;
+}
+
+nav a {
+	text-decoration: none;
+	color: palette.$dark;
+	margin-left: 40px;
+}
+
+.caption {
+	@extend %caption-text;
+	@include mixins.caption-size(45px, 18px, 14px);
+}
+
+.emphasised {
+	color: palette.$blue;
+	font-family: "Righteous", cursive;
+}
+
+#about {
+	background-color: palette.$dark;
+}
+
+.photo-decoration {
+	width: 400px;
+}
+
+#about .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+#about h2 {
+	color: white;
+	@extend %heading-two;
+}

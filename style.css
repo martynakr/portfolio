@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&family=Righteous&display=swap");
+nav {
+  font-family: "Righteous", cursive;
+  font-size: 20px;
+  color: #0f0f0f;
+  text-align: right;
+}
+
+.caption {
+  font-family: "Prompt", sans-serif;
+  color: #0f0f0f;
+}
+
+#about h2 {
+  font-family: "Righteous", cursive;
+  font-size: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+.container--yellow {
+  background-color: #f7ff96;
+  background-image: url("./../img/h-02.svg"), url("./../img/i-03.svg");
+  background-repeat: no-repeat;
+  background-position: center center, right center;
+  background-size: 400% 400%;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  width: 96%;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0f0f0f;
+  margin-left: 40px;
+}
+
+.caption--lg {
+  font-size: 45px;
+}
+.caption--reg {
+  font-size: 18px;
+}
+.caption--sm {
+  font-size: 14px;
+}
+
+.emphasised {
+  color: #0012b4;
+  font-family: "Righteous", cursive;
+}
+
+#about {
+  background-color: #0f0f0f;
+}
+
+.photo-decoration {
+  width: 400px;
+}
+
+#about .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#about h2 {
+  color: white;
+}

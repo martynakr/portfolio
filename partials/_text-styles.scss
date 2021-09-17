@@ -1,0 +1,20 @@
+@use "palette";
+
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&family=Righteous&display=swap");
+
+%nav-text {
+	font-family: "Righteous", cursive;
+	font-size: 20px;
+	color: palette.$dark;
+	text-align: right;
+}
+
+%caption-text {
+	font-family: "Prompt", sans-serif;
+	color: palette.$dark;
+}
+
+%heading-two {
+	font-family: "Righteous", cursive;
+	font-size: 80px;
+}

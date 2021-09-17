@@ -1,0 +1,27 @@
+@mixin caption-size($lg, $reg, $sm) {
+	&--lg {
+		font-size: $lg;
+	}
+
+	&--reg {
+		font-size: $reg;
+	}
+
+	&--sm {
+		font-size: $sm;
+	}
+}
+
+@mixin heading-col($ligth, $dark, $coloured) {
+	&--light {
+		color: $light;
+	}
+
+	&--dark {
+		background-color: $dark;
+	}
+
+	&--coloured {
+		background-color: $coloured;
+	}
+}
