@@ -10,19 +10,38 @@
 }
 
 .container {
-	width: 90%;
+	width: 80%;
 	margin: auto;
 
 	&--yellow {
 		background-color: palette.$yellow-bg-col;
-		background-image: url("./../img/h-02.svg"), url("./../img/i-03.svg");
-		background-repeat: no-repeat;
-		background-position: center center, right center;
-		background-size: 400% 400%;
 		margin-top: 2vw;
 		margin-bottom: 2vw;
 		width: 96%;
 	}
+}
+
+//container for both text and letters h & i //
+
+.hi-container {
+	display: flex;
+	position: relative;
+	height: 650px; //why fit-content doesn't work?//
+	align-items: center;
+	justify-content: center;
+}
+
+//just the letters h & i //
+.hi {
+	display: flex;
+	justify-content: center; //centering letters h & i inside a div //
+	position: absolute;
+}
+
+//intro section text //
+.hi-caption {
+	position: absolute;
+	width: 100%;
 }
 
 nav {
@@ -33,12 +52,32 @@ nav {
 nav a {
 	text-decoration: none;
 	color: palette.$dark;
-	margin-left: 40px;
+	margin-left: 60px;
 }
 
-.caption {
+.bg-letter {
+	height: 550px;
+	margin: 30px;
+}
+
+.card__caption {
 	@extend %caption-text;
-	@include mixins.caption-size(45px, 18px, 14px);
+	@include mixins.caption-size(60px, 18px, 14px);
+	z-index: 2;
+
+	&--lg {
+		padding-left: 15%;
+		font-weight: 500;
+	}
+
+	&--light {
+		color: white;
+	}
+
+	&--blue {
+		color: palette.$blue;
+		font-weight: bold;
+	}
 }
 
 .emphasised {
@@ -48,18 +87,101 @@ nav a {
 
 #about {
 	background-color: palette.$dark;
+	padding: 60px;
 }
 
-.photo-decoration {
-	width: 400px;
+#about > .container {
+	width: 70%;
 }
 
-#about .container {
+.about-card {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap; //flex-wrap doesn't work //
 }
 
-#about h2 {
-	color: white;
+//partent div for photo and yellow circle //
+.about-photo {
+	position: relative;
+	width: 40%;
+	height: 420px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+// both photo and yellow cicrle //
+.card__photo {
+	width: 400px;
+	position: absolute;
+
+	&--bg {
+		margin-right: 60px;
+	}
+
+	&--img {
+		z-index: 1;
+	}
+}
+
+.about-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	width: 50%;
+	// padding-left: 2px; - why does padding move the about text element to a new line
+}
+
+// .about-text p {
+// 	width: 50%;
+// }
+
+.heading {
+	@include mixins.heading-col(palette.$light, palette.$dark, palette.$blue);
 	@extend %heading-two;
+
+	&--centered {
+		text-align: center;
+	}
+
+	&--light {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+#projects {
+	padding: 60px;
+}
+
+#skills {
+	padding: 60px;
+	background-color: palette.$yellow-bg-col;
+}
+
+.skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.skills-list p {
+	@extend %list-text;
+}
+
+#getInTouch {
+	padding: 60px;
+	background-color: palette.$dark;
+}
+
+.contact {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-methods {
+	padding: 45px;
 }

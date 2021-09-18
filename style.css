@@ -6,14 +6,94 @@ nav {
   text-align: right;
 }
 
-.caption {
+.card__caption {
   font-family: "Prompt", sans-serif;
   color: #0f0f0f;
 }
 
-#about h2 {
+.heading {
   font-family: "Righteous", cursive;
-  font-size: 80px;
+  font-size: 70px;
+  padding-bottom: 45px;
+}
+
+.card__btn {
+  font-family: "Righteous", cursive;
+  font-size: 20px;
+}
+
+.skills-list p {
+  font-family: "Prompt", sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.card__btn {
+  padding: 10px 20px;
+  border: 3px solid white;
+  border-radius: 100px;
+  color: white;
+}
+.card__btn--outline {
+  background-color: transparent;
+}
+.card__btn--outline:hover {
+  background-color: #f7ff96;
+  border: 3px solid #f7ff96;
+  color: #0f0f0f;
+}
+.card__btn--blue {
+  background-color: #0012b4;
+  margin-right: 20px;
+}
+.card__btn--blue:hover {
+  background-color: transparent;
+  margin-right: 20px;
+  color: #0012b4;
+  border: 3px solid #0012b4;
+}
+
+h4 {
+  font-family: "Righteous", cursive;
+  font-size: 42px;
+  color: #0012b4;
+}
+
+.project-card {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px;
+}
+.project-card--reverse {
+  flex-direction: row-reverse;
+}
+
+.project-card__image {
+  background-color: black;
+  flex: 50%;
+  height: 400px;
+}
+
+.project-card__caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex: 50%;
+}
+.project-card__caption--reverse {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.project-card__caption > .card__caption,
+.project__card--buttons {
+  padding: 0 45px;
+}
+
+.project-card__title {
+  padding: 0 45px;
 }
 
 * {
@@ -22,18 +102,33 @@ nav {
 }
 
 .container {
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
 .container--yellow {
   background-color: #f7ff96;
-  background-image: url("./../img/h-02.svg"), url("./../img/i-03.svg");
-  background-repeat: no-repeat;
-  background-position: center center, right center;
-  background-size: 400% 400%;
   margin-top: 2vw;
   margin-bottom: 2vw;
   width: 96%;
+}
+
+.hi-container {
+  display: flex;
+  position: relative;
+  height: 650px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hi {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.hi-caption {
+  position: absolute;
+  width: 100%;
 }
 
 nav {
@@ -43,17 +138,36 @@ nav {
 nav a {
   text-decoration: none;
   color: #0f0f0f;
-  margin-left: 40px;
+  margin-left: 60px;
 }
 
-.caption--lg {
-  font-size: 45px;
+.bg-letter {
+  height: 550px;
+  margin: 30px;
 }
-.caption--reg {
+
+.card__caption {
+  z-index: 2;
+}
+.card__caption--lg {
+  font-size: 60px;
+}
+.card__caption--reg {
   font-size: 18px;
 }
-.caption--sm {
+.card__caption--sm {
   font-size: 14px;
+}
+.card__caption--lg {
+  padding-left: 15%;
+  font-weight: 500;
+}
+.card__caption--light {
+  color: white;
+}
+.card__caption--blue {
+  color: #0012b4;
+  font-weight: bold;
 }
 
 .emphasised {
@@ -63,17 +177,91 @@ nav a {
 
 #about {
   background-color: #0f0f0f;
+  padding: 60px;
 }
 
-.photo-decoration {
-  width: 400px;
+#about > .container {
+  width: 70%;
 }
 
-#about .container {
+.about-card {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-#about h2 {
+.about-photo {
+  position: relative;
+  width: 40%;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__photo {
+  width: 400px;
+  position: absolute;
+}
+.card__photo--bg {
+  margin-right: 60px;
+}
+.card__photo--img {
+  z-index: 1;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.heading--light {
   color: white;
+}
+.heading--dark {
+  color: #0f0f0f;
+}
+.heading--blue {
+  color: #0012b4;
+}
+.heading--centered {
+  text-align: center;
+}
+.heading--light {
+  margin: 0;
+  padding: 0;
+}
+
+#projects {
+  padding: 60px;
+}
+
+#skills {
+  padding: 60px;
+  background-color: #f7ff96;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#getInTouch {
+  padding: 60px;
+  background-color: #0f0f0f;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-methods {
+  padding: 45px;
 }

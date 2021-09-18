@@ -1,2 +1,32 @@
 @use "./../partials/palette";
 @use "./../partials/text-styles";
+
+.card__btn {
+	@extend %button-text;
+	padding: 10px 20px;
+	border: 3px solid white;
+	border-radius: 100px;
+	color: white;
+
+	&--outline {
+		background-color: transparent;
+	}
+
+	&--outline:hover {
+		background-color: palette.$yellow-bg-col;
+		border: 3px solid palette.$yellow-bg-col;
+		color: palette.$dark;
+	}
+
+	&--blue {
+		background-color: palette.$blue;
+		margin-right: 20px;
+	}
+
+	&--blue:hover {
+		background-color: transparent;
+		margin-right: 20px;
+		color: palette.$blue;
+		border: 3px solid palette.$blue;
+	}
+}

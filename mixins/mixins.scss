@@ -12,16 +12,18 @@
 	}
 }
 
-@mixin heading-col($ligth, $dark, $coloured) {
+@mixin heading-col($light, $dark, $blue) {
 	&--light {
 		color: $light;
 	}
 
 	&--dark {
-		background-color: $dark;
+		color: $dark;
 	}
 
-	&--coloured {
-		background-color: $coloured;
+	&--blue {
+		color: $blue;
 	}
 }
+
+//media queries //
