@@ -1,5 +1,6 @@
 @use "./../partials/palette";
 @use "./../partials/text-styles";
+@use "./../mixins/mixins.scss";
 
 h4 {
 	font-family: "Righteous", cursive;
@@ -9,39 +10,79 @@ h4 {
 
 .project-card {
 	display: flex;
-	justify-content: space-around;
+	flex-direction: row;
 	margin-bottom: 60px;
-	// flex-wrap: wrap;
 
 	&--reverse {
 		flex-direction: row-reverse;
+		text-align: right;
+	}
+
+	@include mixins.tablet {
+		flex-direction: column;
+	}
+
+	@include mixins.phone {
+		flex-direction: column;
+	}
+
+	@include mixins.landscape-tablet {
+		flex-direction: column;
+	}
+
+	@include mixins.laptop {
+		flex-direction: column;
 	}
 }
 
-.project-card__image {
-	background-color: black;
+.project-img {
 	flex: 50%;
-	height: 400px; //change to % once I have the img //
 }
 
-.project-card__caption {
+.project-img img {
+	max-width: 100%; /*takes 100% oof the div */
+	display: flex; /* remove extra space below image */
+}
+
+.project-caption {
+	flex: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-	align-items: flex-start;
-	flex: 50%;
+}
 
-	&--reverse {
-		align-items: flex-end;
-		text-align: right;
+.project-caption > h4,
+p {
+	padding: 0 45px;
+	@include mixins.laptop {
+		padding: 15px 0;
+	}
+	@include mixins.tablet {
+		padding: 15px 0;
+	}
+	@include mixins.phone {
+		padding: 15px 0;
+	}
+
+	@include mixins.landscape-tablet {
+		padding: 15px 0;
 	}
 }
 
-.project-card__caption > .card__caption,
 .project__card--buttons {
 	padding: 0 45px;
-}
 
-.project-card__title {
-	padding: 0 45px;
+	@include mixins.laptop {
+		padding: 15px 0;
+	}
+	@include mixins.tablet {
+		padding: 15px 0;
+	}
+	@include mixins.phone {
+		padding: 15px 0;
+	}
+
+	@include mixins.landscape-tablet {
+		padding: 15px 0;
+	}
 }

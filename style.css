@@ -35,6 +35,16 @@ nav {
   border-radius: 100px;
   color: white;
 }
+@media only screen and (max-width: 576px) {
+  .card__btn {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .card__btn {
+    font-size: 16px;
+  }
+}
 .card__btn--outline {
   background-color: transparent;
 }
@@ -45,11 +55,9 @@ nav {
 }
 .card__btn--blue {
   background-color: #0012b4;
-  margin-right: 20px;
 }
 .card__btn--blue:hover {
   background-color: transparent;
-  margin-right: 20px;
   color: #0012b4;
   border: 3px solid #0012b4;
 }
@@ -62,38 +70,103 @@ h4 {
 
 .project-card {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
   margin-bottom: 60px;
 }
 .project-card--reverse {
   flex-direction: row-reverse;
+  text-align: right;
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .project-card {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .project-card {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+  .project-card {
+    flex-direction: column;
+  }
 }
 
-.project-card__image {
-  background-color: black;
+.project-img {
   flex: 50%;
-  height: 400px;
 }
 
-.project-card__caption {
+.project-img img {
+  max-width: 100%;
+  /*takes 100% oof the div */
+  display: flex;
+  /* remove extra space below image */
+}
+
+.project-caption {
+  flex: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-start;
-  flex: 50%;
-}
-.project-card__caption--reverse {
-  align-items: flex-end;
-  text-align: right;
 }
 
-.project-card__caption > .card__caption,
+.project-caption > h4,
+p {
+  padding: 0 45px;
+}
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+  .project-caption > h4,
+p {
+    padding: 15px 0;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .project-caption > h4,
+p {
+    padding: 15px 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .project-caption > h4,
+p {
+    padding: 15px 0;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .project-caption > h4,
+p {
+    padding: 15px 0;
+  }
+}
+
 .project__card--buttons {
   padding: 0 45px;
 }
-
-.project-card__title {
-  padding: 0 45px;
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+  .project__card--buttons {
+    padding: 15px 0;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .project__card--buttons {
+    padding: 15px 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .project__card--buttons {
+    padding: 15px 0;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .project__card--buttons {
+    padding: 15px 0;
+  }
 }
 
 * {
@@ -141,9 +214,19 @@ nav a {
   margin-left: 60px;
 }
 
+nav a:hover {
+  color: #0012b4;
+  font-weight: bold;
+}
+
 .bg-letter {
   height: 550px;
   margin: 30px;
+}
+@media only screen and (max-width: 576px) {
+  .bg-letter {
+    height: 450px;
+  }
 }
 
 .card__caption {
@@ -158,7 +241,19 @@ nav a {
 .card__caption--sm {
   font-size: 14px;
 }
+@media only screen and (max-width: 576px) {
+  .card__caption--lg {
+    font-size: 48px;
+  }
+  .card__caption--reg {
+    font-size: 15px;
+  }
+  .card__caption--sm {
+    font-size: 12px;
+  }
+}
 .card__caption--lg {
+  padding-right: 15%;
   padding-left: 15%;
   font-weight: 500;
 }
@@ -227,6 +322,11 @@ nav a {
 .heading--blue {
   color: #0012b4;
 }
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .heading {
+    font-size: 62px;
+  }
+}
 .heading--centered {
   text-align: center;
 }
@@ -264,4 +364,14 @@ nav a {
 
 .contact-methods {
   padding: 45px;
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .contact-methods {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contact-methods {
+    text-align: center;
+  }
 }
