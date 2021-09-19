@@ -28,6 +28,10 @@
 
 	&--blue {
 		background-color: palette.$blue;
+
+		@include mixins.phone {
+			margin: 6px 0;
+		}
 	}
 
 	&--blue:hover {

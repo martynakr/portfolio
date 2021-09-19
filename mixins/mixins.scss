@@ -57,7 +57,13 @@ $laptop: 1024px;
 }
 
 @mixin large-screen {
-	@media only screen and (mix-width: $laptop+1) {
+	@media only screen and (mix-width: $laptop + 1) {
+		@content;
+	}
+}
+
+@mixin laptop-and-smaller {
+	@media only screen and (max-width: $laptop) {
 		@content;
 	}
 }

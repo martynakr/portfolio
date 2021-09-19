@@ -74,7 +74,7 @@ nav a:hover {
 	@include mixins.caption-size(60px, 18px, 14px);
 
 	@include mixins.phone {
-		@include mixins.caption-size(48px, 15px, 12px);
+		@include mixins.caption-size(48px, 16px, 12px);
 	}
 	z-index: 2;
 
@@ -112,6 +112,10 @@ nav a:hover {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap; //flex-wrap doesn't work //
+
+	@include mixins.laptop-and-smaller {
+		flex-direction: column;
+	}
 }
 
 //partent div for photo and yellow circle //
@@ -122,6 +126,11 @@ nav a:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@include mixins.laptop-and-smaller {
+		width: 100%;
+		margin-bottom: 45px;
+	}
 }
 
 // both photo and yellow cicrle //
@@ -145,10 +154,16 @@ nav a:hover {
 	justify-content: space-evenly;
 	width: 50%;
 	// padding-left: 2px; - why does padding move the about text element to a new line
+
+	@include mixins.laptop-and-smaller {
+		width: 100%;
+	}
 }
 
-// .about-text p {
-// 	width: 50%;
+// .about-text * {
+// 	@include mixins.laptop-and-smaller {
+// 		padding-bottom: 20px;
+// 	}
 // }
 
 .heading {
