@@ -26,11 +26,15 @@
 	}
 }
 
+@mixin transition-ease {
+	transition: all 0.2s ease-in-out;
+}
+
 //media queries //
 $phone: 576px;
 $tablet: 768px;
 $landscape-tablet: 992px;
-$laptop: 1024px;
+$laptop: 1200px;
 
 @mixin phone {
 	@media only screen and (max-width: $phone) {
@@ -67,3 +71,13 @@ $laptop: 1024px;
 		@content;
 	}
 }
+
+@mixin tablet-and-smaller {
+	@media only screen and (max-width: $tablet) {
+		@content;
+	}
+}
+
+// create mixins for flex boxes!! //
+
+//Should I replace values in px with %//

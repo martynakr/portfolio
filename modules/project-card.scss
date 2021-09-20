@@ -12,6 +12,7 @@ h4 {
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 60px;
+	width: 100%;
 
 	&--reverse {
 		flex-direction: row-reverse;
@@ -41,8 +42,13 @@ h4 {
 
 .project-img {
 	flex: 50%;
+
+	@include mixins.phone {
+		flex: 100%;
+	}
 }
 
+// Do I need to give the image a class or is this fine? //
 .project-img img {
 	max-width: 100%; /*takes 100% oof the div */
 	display: flex; /* remove extra space below image */
@@ -53,6 +59,10 @@ h4 {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+
+	@include mixins.phone {
+		flex: 100%;
+	}
 }
 
 .card__caption--padding,

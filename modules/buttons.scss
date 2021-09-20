@@ -7,6 +7,7 @@
 	border: 3px solid white;
 	border-radius: 100px;
 	color: white;
+	@include mixins.transition-ease;
 
 	@include mixins.phone {
 		font-size: 16px;
@@ -39,5 +40,67 @@
 
 		color: palette.$blue;
 		border: 3px solid palette.$blue;
+	}
+}
+
+%burger-icon {
+	position: absolute;
+	z-index: 4;
+	height: 45px;
+	width: 45px;
+	cursor: pointer;
+
+	@include mixins.transition-ease;
+}
+
+.menu-btn {
+	@extend %burger-icon;
+	right: 3rem;
+	top: 2rem;
+
+	&__burger {
+		content: "";
+		background: palette.$dark;
+		@extend %burger-icon;
+		height: 4px;
+		top: 20px;
+		visibility: hidden;
+
+		@include mixins.tablet {
+			visibility: visible;
+		}
+		@include mixins.phone {
+			visibility: visible;
+		}
+	}
+
+	&::before {
+		content: "";
+		background: palette.$dark;
+		@extend %burger-icon;
+		top: 32px;
+		height: 4px;
+		visibility: hidden;
+		@include mixins.tablet {
+			visibility: visible;
+		}
+		@include mixins.phone {
+			visibility: visible;
+		}
+	}
+
+	&::after {
+		content: "";
+		background: palette.$dark;
+		@extend %burger-icon;
+		top: 44px;
+		height: 4px;
+		visibility: hidden;
+		@include mixins.tablet {
+			visibility: visible;
+		}
+		@include mixins.phone {
+			visibility: visible;
+		}
 	}
 }

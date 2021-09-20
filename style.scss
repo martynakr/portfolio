@@ -4,18 +4,31 @@
 @use "./partials/text-styles";
 @use "./mixins/mixins.scss";
 
+%flexbox-center-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 }
 
+// body {
+// 	width: 100%;
+// }
 .container {
 	width: 80%;
 	margin: auto;
 
+	@include mixins.phone {
+		width: 96%;
+	}
+
 	&--yellow {
 		background-color: palette.$yellow-bg-col;
-		margin-top: 2vw;
+		margin-top: 2%;
 		margin-bottom: 2vw;
 		width: 96%;
 	}
@@ -24,17 +37,18 @@
 //container for both text and letters h & i //
 
 .hi-container {
-	display: flex;
+	@extend %flexbox-center-center;
 	position: relative;
 	height: 650px; //why fit-content doesn't work?//
-	align-items: center;
-	justify-content: center;
+
+	@include mixins.phone {
+		height: 500px;
+	}
 }
 
 //just the letters h & i //
 .hi {
-	display: flex;
-	justify-content: center; //centering letters h & i inside a div //
+	@extend %flexbox-center-center; //centering letters h & i inside a div //
 	position: absolute;
 }
 
@@ -53,11 +67,17 @@ nav a {
 	text-decoration: none;
 	color: palette.$dark;
 	margin-left: 60px;
+	@include mixins.transition-ease;
+
+	@include mixins.tablet-and-smaller {
+		visibility: hidden;
+	}
 }
 
 nav a:hover {
 	color: palette.$blue;
 	font-weight: bold;
+	letter-spacing: 1px;
 }
 
 .bg-letter {
@@ -65,7 +85,7 @@ nav a:hover {
 	margin: 30px;
 
 	@include mixins.phone {
-		height: 450px;
+		height: 400px;
 	}
 }
 
@@ -74,7 +94,7 @@ nav a:hover {
 	@include mixins.caption-size(60px, 18px, 14px);
 
 	@include mixins.phone {
-		@include mixins.caption-size(48px, 16px, 12px);
+		@include mixins.caption-size(42px, 16px, 12px);
 	}
 	z-index: 2;
 
@@ -92,6 +112,12 @@ nav a:hover {
 		color: palette.$blue;
 		font-weight: bold;
 	}
+
+	&--light-center {
+		color: rgba(256, 256, 256, 0.4);
+		text-align: center;
+		font-size: 12px;
+	}
 }
 
 .emphasised {
@@ -104,8 +130,11 @@ nav a:hover {
 	padding: 60px;
 }
 
-#about > .container {
+.container__about {
 	width: 70%;
+	@include mixins.phone {
+		width: 100%;
+	}
 }
 
 .about-card {
@@ -115,6 +144,7 @@ nav a:hover {
 
 	@include mixins.laptop-and-smaller {
 		flex-direction: column;
+		justify-content: center;
 	}
 }
 
@@ -123,13 +153,10 @@ nav a:hover {
 	position: relative;
 	width: 40%;
 	height: 420px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@extend %flexbox-center-center;
 
 	@include mixins.laptop-and-smaller {
 		width: 100%;
-		margin-bottom: 45px;
 	}
 }
 
@@ -140,10 +167,17 @@ nav a:hover {
 
 	&--bg {
 		margin-right: 60px;
+
+		@include mixins.phone {
+			visibility: hidden;
+		}
 	}
 
 	&--img {
 		z-index: 1;
+		@include mixins.phone {
+			height: 300px;
+		}
 	}
 }
 
@@ -170,7 +204,7 @@ nav a:hover {
 	@include mixins.heading-col(palette.$light, palette.$dark, palette.$blue);
 	@extend %heading-two;
 
-	@include mixins.tablet {
+	@include mixins.tablet-and-smaller {
 		font-size: 62px;
 	}
 
@@ -209,14 +243,20 @@ nav a:hover {
 }
 
 .contact {
-	display: flex;
+	@extend %flexbox-center-center;
 	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
+
+	@include mixins.tablet-and-smaller {
+		flex-direction: column;
+	}
+}
+
+.contact * {
+	margin: 0 20px;
 }
 
 .contact-methods {
-	padding: 45px;
+	padding: 45px 0;
 
 	@include mixins.tablet {
 		text-align: center;

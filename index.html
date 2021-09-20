@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- is it an issue that I don't have a header tag and h1? -->
+    <!-- is it an issue that I don't have a header tag? -->
     <main>
         <section id='intro'>
             <div class="container container--yellow">
+                <div class="menu-btn">
+                    <span class="menu-btn__burger"></span>
+                </div>
                 <nav>
                     <a href="#about">about</a>
                     <a href="#projects">projects</a>
@@ -33,7 +36,7 @@
         </section>
 
         <section id="about">
-            <div class="container">
+            <div class="container container__about">
                 <div class="about-card">
                     <div class="about-photo">
                         <img class="card__photo card__photo--img" src="./img/photo-placeholder-04.svg" alt="">
@@ -101,11 +104,9 @@
                 <div class="project__card--buttons">
                     <button class="card__btn card__btn--blue">code</button>
                     <button class="card__btn card__btn--blue">website</button>
-                </div>          
-        </div>
-    </div>
-               
-                
+                            </div>          
+                    </div>
+                </div>         
             </div>
         </section>
 
@@ -139,9 +140,11 @@
                         <p class="card__caption card__caption--reg card__caption--light">Github</p>
                     </div>
                 </div>
+                <br>
+                <p class="card__caption card__caption--reg card__caption--light-center"> &copy Copyright Martyna Krol <script>document.write(new Date().getFullYear());</script></p>
             </div>
         </section>
     </main>
-    
+  
 </body>
 </html>
