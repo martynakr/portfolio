@@ -1,7 +1,7 @@
 @use "./../partials/palette";
 @use "./../partials/text-styles";
 @use "./../mixins/mixins.scss";
-.card__btn {
+.btn {
 	@extend %button-text;
 	padding: 10px 20px;
 	border: 3px solid white;
@@ -9,11 +9,7 @@
 	color: white;
 	@include mixins.transition-ease;
 
-	@include mixins.phone {
-		font-size: 16px;
-	}
-
-	@include mixins.tablet {
+	@include mixins.tablet-and-smaller {
 		font-size: 16px;
 	}
 
@@ -43,64 +39,3 @@
 	}
 }
 
-%burger-icon {
-	position: absolute;
-	z-index: 4;
-	height: 45px;
-	width: 45px;
-	cursor: pointer;
-
-	@include mixins.transition-ease;
-}
-
-.menu-btn {
-	@extend %burger-icon;
-	right: 3rem;
-	top: 2rem;
-
-	&__burger {
-		content: "";
-		background: palette.$dark;
-		@extend %burger-icon;
-		height: 4px;
-		top: 20px;
-		visibility: hidden;
-
-		@include mixins.tablet {
-			visibility: visible;
-		}
-		@include mixins.phone {
-			visibility: visible;
-		}
-	}
-
-	&::before {
-		content: "";
-		background: palette.$dark;
-		@extend %burger-icon;
-		top: 32px;
-		height: 4px;
-		visibility: hidden;
-		@include mixins.tablet {
-			visibility: visible;
-		}
-		@include mixins.phone {
-			visibility: visible;
-		}
-	}
-
-	&::after {
-		content: "";
-		background: palette.$dark;
-		@extend %burger-icon;
-		top: 44px;
-		height: 4px;
-		visibility: hidden;
-		@include mixins.tablet {
-			visibility: visible;
-		}
-		@include mixins.phone {
-			visibility: visible;
-		}
-	}
-}

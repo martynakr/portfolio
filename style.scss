@@ -3,6 +3,12 @@
 @use "./modules/project-card.scss";
 @use "./partials/text-styles";
 @use "./mixins/mixins.scss";
+@use "./modules/nav.scss";
+
+html,
+body {
+	overflow-x: hidden;
+}
 
 %flexbox-center-center {
 	display: flex;
@@ -15,9 +21,6 @@
 	padding: 0;
 }
 
-// body {
-// 	width: 100%;
-// }
 .container {
 	width: 80%;
 	margin: auto;
@@ -39,10 +42,10 @@
 .hi-container {
 	@extend %flexbox-center-center;
 	position: relative;
-	height: 650px; //why fit-content doesn't work?//
+	height: 680px; //why fit-content doesn't work?//
 
 	@include mixins.phone {
-		height: 500px;
+		height: 580px;
 	}
 }
 
@@ -50,34 +53,14 @@
 .hi {
 	@extend %flexbox-center-center; //centering letters h & i inside a div //
 	position: absolute;
+	z-index: 2;
 }
 
 //intro section text //
 .hi-caption {
 	position: absolute;
 	width: 100%;
-}
-
-nav {
-	@extend %nav-text;
-	padding: 30px;
-}
-
-nav a {
-	text-decoration: none;
-	color: palette.$dark;
-	margin-left: 60px;
-	@include mixins.transition-ease;
-
-	@include mixins.tablet-and-smaller {
-		visibility: hidden;
-	}
-}
-
-nav a:hover {
-	color: palette.$blue;
-	font-weight: bold;
-	letter-spacing: 1px;
+	z-index: 3;
 }
 
 .bg-letter {
@@ -89,12 +72,12 @@ nav a:hover {
 	}
 }
 
-.card__caption {
+.text {
 	@extend %caption-text;
 	@include mixins.caption-size(60px, 18px, 14px);
 
 	@include mixins.phone {
-		@include mixins.caption-size(42px, 16px, 12px);
+		@include mixins.caption-size(40px, 16px, 12px);
 	}
 	z-index: 2;
 
@@ -120,7 +103,7 @@ nav a:hover {
 	}
 }
 
-.emphasised {
+span {
 	color: palette.$blue;
 	font-family: "Righteous", cursive;
 }
@@ -158,6 +141,11 @@ nav a:hover {
 	@include mixins.laptop-and-smaller {
 		width: 100%;
 	}
+
+	@include mixins.phone {
+		width: 100%;
+		height: 300px;
+	}
 }
 
 // both photo and yellow cicrle //
@@ -187,18 +175,19 @@ nav a:hover {
 	align-items: flex-start;
 	justify-content: space-evenly;
 	width: 50%;
-	// padding-left: 2px; - why does padding move the about text element to a new line
 
 	@include mixins.laptop-and-smaller {
 		width: 100%;
+		margin-top: 30px;
 	}
 }
 
-// .about-text * {
-// 	@include mixins.laptop-and-smaller {
-// 		padding-bottom: 20px;
-// 	}
-// }
+.about-text > h2,
+p {
+	@include mixins.laptop-and-smaller {
+		padding-bottom: 30px;
+	}
+}
 
 .heading {
 	@include mixins.heading-col(palette.$light, palette.$dark, palette.$blue);
@@ -219,7 +208,7 @@ nav a:hover {
 }
 
 #projects {
-	padding: 60px;
+	padding: 60px 30px 0 30px;
 }
 
 #skills {
@@ -248,11 +237,24 @@ nav a:hover {
 
 	@include mixins.tablet-and-smaller {
 		flex-direction: column;
+		@extend %flexbox-center-center; //doesn't work //
 	}
 }
 
 .contact * {
 	margin: 0 20px;
+
+	@include mixins.tablet {
+		margin: 0;
+	}
+
+	@include mixins.phone {
+		margin: 0;
+	}
+}
+
+.contact-methods a {
+	text-decoration: none;
 }
 
 .contact-methods {
@@ -267,6 +269,7 @@ nav a:hover {
 	}
 }
 
-// // to do:
-// 1. add padding tp project caption section
 // change nav to responsive
+
+// git push --all
+// git push origin develop

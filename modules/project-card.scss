@@ -22,22 +22,6 @@ h4 {
 	@include mixins.laptop-and-smaller {
 		flex-direction: column;
 	}
-
-	// @include mixins.tablet {
-	// 	flex-direction: column;
-	// }
-
-	// @include mixins.phone {
-	// 	flex-direction: column;
-	// }
-
-	// @include mixins.landscape-tablet {
-	// 	flex-direction: column;
-	// }
-
-	// @include mixins.laptop {
-	// 	flex-direction: column;
-	// }
 }
 
 .project-img {
@@ -65,7 +49,7 @@ h4 {
 	}
 }
 
-.card__caption--padding,
+.text--padding,
 h4 {
 	padding: 0 45px;
 	@include mixins.laptop-and-smaller {

@@ -8,18 +8,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- is it an issue that I don't have a header tag? -->
-    <main>
+    <header>
         <section id='intro'>
             <div class="container container--yellow">
                 <div class="menu-btn">
                     <span class="menu-btn__burger"></span>
-                </div>
-                <nav>
-                    <a href="#about">about</a>
-                    <a href="#projects">projects</a>
-                    <a href="#skills">skills</a>
-                    <a href="#getInTouch">get in touch</a>
+                  </div>
+                <nav class="nav">
+                    <div class="menu-nav">
+                        <a class="menu-link" href="#about">about</a>
+                        <a class="menu-link-two" href="#projects">projects</a>
+                        <a class="menu-link-three" href="#skills">skills</a>
+                        <a class="menu-link-four" href="#getInTouch">get in touch</a>
+                    </div>
                 </nav>
                 <div class="hi-container">
                     <div class="hi">
@@ -27,14 +28,14 @@
                         <img class="bg-letter"src="./img/i-03.svg" alt="">
                     </div>
                     <div class="hi-caption">
-                        <h1 class="card__caption card__caption--lg">I'm Martyna,</h1>
-                        <p class="card__caption card__caption--lg">a junior <span class="emphasised">software developer</span> <br>and a designer.</p>
+                        <h1 class="text text--lg">I'm Martyna,</h1>
+                        <p class="text text--lg">a junior <span>software developer</span> <br>and a designer.</p>
                     </div>
                 </div>
             </div>   
-
         </section>
-
+    </header>
+    <main>
         <section id="about">
             <div class="container container__about">
                 <div class="about-card">
@@ -43,10 +44,9 @@
                         <img class="card__photo card__photo--bg" src="./img/yellow-circle-04.svg" alt="">
                     </div>
                     <div class="about-text"> 
-                        <!-- issues with naming divs -->
                         <h2 class="heading heading--light">about</h2>
-                        <p class="card__caption card__caption--reg card__caption--light card__caption--right">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
-                        <button class="card__btn card__btn--outline">download resume</button>
+                        <p class="text text--reg text--light text--right">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+                        <button class="btn btn--outline">download resume</button>
                     </div>
                     
                 </div>
@@ -56,20 +56,17 @@
         <section id="projects">
             <div class="container">
                 <h2 class="heading heading--blue">projects</h2>
-
                 <div class="project-card">
                     <div class="project-img">
                         <img src="./img/project-imp-05.jpg" alt="">
                     </div>
-
-                    <div class="project-caption">
-                  
+                    <div class="project-caption">                 
                         <h4>project title</h4>
-                        <p class="card__caption card__caption--reg card__caption--padding">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam consectetuer adipiscing elit</p>
-                        <p class="card__caption card__caption--reg card__caption--blue card__caption--padding">HTML, CSS, Javascript</p>
+                        <p class="text text--reg text--padding">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam consectetuer adipiscing elit</p>
+                        <p class="text text--reg text--blue text--padding">HTML, CSS, Javascript</p>
                         <div class="project__card--buttons">
-                            <button class="card__btn card__btn--blue">code</button>
-                            <button class="card__btn card__btn--blue">website</button>
+                            <button class="btn btn--blue">code</button>
+                            <button class="btn btn--blue">website</button>
                         </div>          
                 </div>
             </div>
@@ -78,33 +75,32 @@
                 <div class="project-img">
                     <img src="./img/project-imp-05.jpg" alt="">
                 </div>
-
                 <div class="project-caption">
               
                     <h4>project title</h4>
-                    <p class="card__caption card__caption--reg card__caption--padding">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam consectetuer adipiscing elit</p>
-                    <p class="card__caption card__caption--reg card__caption--blue card__caption--padding">HTML, CSS, Javascript</p>
+                    <p class="text text--reg text--padding">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam consectetuer adipiscing elit</p>
+                    <p class="text text--reg text--blue text--padding">HTML, CSS, Javascript</p>
                     <div class="project__card--buttons">
-                        <button class="card__btn card__btn--blue">code</button>
-                        <button class="card__btn card__btn--blue">website</button>
+                        <button class="btn btn--blue">code</button>
+                        <button class="btn btn--blue">website</button>
                     </div>          
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-img">
-                <img src="./img/project-imp-05.jpg" alt="">
+                </div>
             </div>
 
-            <div class="project-caption">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="./img/project-imp-05.jpg" alt="">
+                </div>
+
+                <div class="project-caption">
           
-                <h4>project title</h4>
-                <p class="card__caption card__caption--reg card__caption--padding">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam consectetuer adipiscing elit</p>
-                <p class="card__caption card__caption--reg card__caption--blue card__caption--padding">HTML, CSS, Javascript</p>
-                <div class="project__card--buttons">
-                    <button class="card__btn card__btn--blue">code</button>
-                    <button class="card__btn card__btn--blue">website</button>
-                            </div>          
+                    <h4>project title</h4>
+                    <p class="text text--reg text--padding">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam consectetuer adipiscing elit</p>
+                    <p class="text text--reg text--blue text--padding">HTML, CSS, Javascript</p>
+                    <div class="project__card--buttons">
+                        <button class="btn btn--blue">code</button>
+                        <button class="btn btn--blue">website</button>
+                    </div>          
                     </div>
                 </div>         
             </div>
@@ -133,18 +129,20 @@
                     <h2 class="heading heading--light">get in <br>touch</h2>
                 
                     <div class="contact-methods">
-                        <p class="card__caption card__caption--reg card__caption--light">martyna.krool@gmail.com</p>
+                        <a class="text text--reg text--light">martyna.krool@gmail.com</a>
                         <br>
-                        <p class="card__caption card__caption--reg card__caption--light">LinkedIn</p>
                         <br>
-                        <p class="card__caption card__caption--reg card__caption--light">Github</p>
+                        <a href="https://www.linkedin.com/in/martyna-kr%C3%B3l-7a8230b5/?originalSubdomain=au" class="text text--reg text--light">LinkedIn</a>
+                        <br>
+                        <br>
+                        <a href="https://github.com/martynakr"class="text text--reg text--light">Github</a>
                     </div>
                 </div>
                 <br>
-                <p class="card__caption card__caption--reg card__caption--light-center"> &copy Copyright Martyna Krol <script>document.write(new Date().getFullYear());</script></p>
+                <p class="text text--reg text--light-center"> &copy Copyright Martyna Krol <script>document.write(new Date().getFullYear());</script></p>
             </div>
         </section>
     </main>
-  
+<script src="./js/script.js"></script>
 </body>
 </html>

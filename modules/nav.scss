@@ -1,0 +1,133 @@
+@use "./../partials/palette";
+@use "./../partials/text-styles";
+@use "./../mixins/mixins.scss";
+
+%nav-text {
+	font-family: "Righteous", cursive;
+	font-size: 20px;
+	color: palette.$dark;
+	text-align: right;
+}
+
+nav {
+	@extend %nav-text;
+	padding: 30px;
+	// position: absolute;
+	z-index: 5;
+
+	@include mixins.tablet-and-smaller {
+		position: fixed;
+		right: 0;
+		top: 0;
+		background-color: white;
+		width: 100vw;
+		opacity: 0.98;
+		visibility: hidden;
+		padding: 0;
+
+		&.open {
+			visibility: visible;
+			padding: 60px 0;
+		}
+
+		.menu-nav {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vw; //why 100 doesn't cover the whole thing?
+			width: 100vw;
+			overflow: hidden;
+			transform: translateY(-150%);
+			@include mixins.transition-ease;
+			&.open {
+				transform: translateY(0);
+				padding: 60px 0;
+			}
+		}
+	}
+}
+
+nav a {
+	text-decoration: none;
+	color: palette.$dark;
+	margin-left: 30px;
+	@include mixins.transition-ease;
+
+	@include mixins.tablet-and-smaller {
+		padding: 30px;
+		margin: 0;
+	}
+}
+
+nav a:hover {
+	color: palette.$blue;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+%burger-icon {
+	position: absolute;
+	z-index: 6;
+	height: 35px;
+	width: 35px;
+	cursor: pointer;
+
+	@include mixins.transition-ease;
+}
+
+.menu-btn {
+	@extend %burger-icon;
+	right: 2rem;
+	top: 2rem;
+
+	&__burger {
+		content: "";
+		background: palette.$dark;
+		@extend %burger-icon;
+		height: 4px;
+		top: 10px;
+		visibility: hidden;
+
+		@include mixins.tablet-and-smaller {
+			visibility: visible;
+		}
+
+		&::before {
+			content: "";
+			background: palette.$dark;
+			@extend %burger-icon;
+			top: -12px;
+			height: 4px;
+			visibility: hidden;
+			@include mixins.tablet-and-smaller {
+				visibility: visible;
+			}
+		}
+
+		&::after {
+			content: "";
+			background: palette.$dark;
+			@extend %burger-icon;
+			top: 12px;
+			height: 4px;
+			visibility: hidden;
+			@include mixins.tablet-and-smaller {
+				visibility: visible;
+			}
+		}
+
+		&.open {
+			transform: rotate(720deg);
+			background: transparent;
+
+			&::before {
+				transform: rotate(45deg) translate(14px, 3px);
+			}
+
+			&::after {
+				transform: rotate(-45deg) translate(14px, -3px);
+			}
+		}
+	}
+}
