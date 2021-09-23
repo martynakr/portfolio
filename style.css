@@ -174,14 +174,13 @@ nav {
   }
   nav.open {
     visibility: visible;
-    padding: 60px 0;
   }
   nav .menu-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vw;
+    height: 100vh;
     width: 100vw;
     overflow: hidden;
     transform: translateY(-150%);
@@ -189,7 +188,6 @@ nav {
   }
   nav .menu-nav.open {
     transform: translateY(0);
-    padding: 60px 0;
   }
 }
 
@@ -275,6 +273,11 @@ nav a:hover {
 html,
 body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+html.open,
+body.open {
+  position: fixed;
 }
 
 .contact, .about-photo, .hi, .hi-container {
@@ -431,6 +434,10 @@ span {
 .card__photo--bg {
   margin-right: 60px;
 }
+.card__photo--bg.open {
+  transform: translate(40px, 30px);
+  transition: all 0.2s ease-in-out;
+}
 @media only screen and (max-width: 576px) {
   .card__photo--bg {
     visibility: hidden;
@@ -501,6 +508,10 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.skills-list p {
+  padding: 0 20px;
 }
 
 #getInTouch {

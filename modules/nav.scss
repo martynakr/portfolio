@@ -27,7 +27,6 @@ nav {
 
 		&.open {
 			visibility: visible;
-			padding: 60px 0;
 		}
 
 		.menu-nav {
@@ -35,14 +34,13 @@ nav {
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			height: 100vw; //why 100 doesn't cover the whole thing?
+			height: 100vh;
 			width: 100vw;
 			overflow: hidden;
 			transform: translateY(-150%);
 			@include mixins.transition-ease;
 			&.open {
 				transform: translateY(0);
-				padding: 60px 0;
 			}
 		}
 	}

@@ -8,6 +8,11 @@
 html,
 body {
 	overflow-x: hidden;
+	scroll-behavior: smooth;
+
+	&.open {
+		position: fixed;
+	}
 }
 
 %flexbox-center-center {
@@ -156,6 +161,11 @@ span {
 	&--bg {
 		margin-right: 60px;
 
+		&.open {
+			transform: translate(40px, 30px);
+			@include mixins.transition-ease;
+		}
+
 		@include mixins.phone {
 			visibility: hidden;
 		}
@@ -224,6 +234,7 @@ p {
 
 .skills-list p {
 	@extend %list-text;
+	padding: 0 20px;
 }
 
 #getInTouch {
