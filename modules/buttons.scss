@@ -8,6 +8,7 @@
 	border-radius: 100px;
 	color: white;
 	@include mixins.transition-ease;
+	text-decoration: none;
 
 	@include mixins.tablet-and-smaller {
 		font-size: 16px;
@@ -38,4 +39,3 @@
 		border: 3px solid palette.$blue;
 	}
 }
-

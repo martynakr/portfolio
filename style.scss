@@ -9,9 +9,10 @@ html,
 body {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
-
-	&.open {
-		position: fixed;
+	@include mixins.tablet-and-smaller {
+		&.open {
+			position: fixed;
+		}
 	}
 }
 
@@ -54,6 +55,18 @@ body {
 	}
 }
 
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(-300px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
 //just the letters h & i //
 .hi {
 	@extend %flexbox-center-center; //centering letters h & i inside a div //
@@ -66,14 +79,66 @@ body {
 	position: absolute;
 	width: 100%;
 	z-index: 3;
+	// animation: slide-in-right 2s 1;
+}
+
+.fade-in {
+	opacity: 0;
+	transition: opacity 300ms ease-in;
+}
+
+.from-left {
+	transform: translateX(-25%);
+}
+
+.from-right {
+	transform: translateX(25%);
+}
+
+.from-left,
+.from-right {
+	transition: opacity 300ms ease-in, transform 500ms ease-in;
+	opacity: 0;
+}
+
+.from-left.appear,
+.from-right.appear {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+.fade-in.appear {
+	opacity: 1;
 }
 
 .bg-letter {
 	height: 550px;
 	margin: 30px;
+	animation: dance 1s 3;
+	// @include mixins.transition-ease;
 
+	&__two {
+		animation-delay: 0.2s;
+	}
+	&:hover {
+		animation: dance 1s infinite;
+	}
 	@include mixins.phone {
 		height: 400px;
+	}
+}
+
+@keyframes dance {
+	0% {
+		// transform: translateY(0px);
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-60px);
+	}
+
+	100% {
+		transform: translateY(0px);
 	}
 }
 
@@ -120,7 +185,7 @@ span {
 
 .container__about {
 	width: 70%;
-	@include mixins.phone {
+	@include mixins.tablet-and-smaller {
 		width: 100%;
 	}
 }
@@ -140,7 +205,7 @@ span {
 .about-photo {
 	position: relative;
 	width: 40%;
-	height: 420px;
+	height: 500px;
 	@extend %flexbox-center-center;
 
 	@include mixins.laptop-and-smaller {
@@ -175,7 +240,25 @@ span {
 		z-index: 1;
 		@include mixins.phone {
 			height: 300px;
+			width: 300px;
 		}
+
+		&:hover ~ .card__photo--bg {
+			animation: circle 1s 1;
+		}
+	}
+}
+
+@keyframes circle {
+	0% {
+		transform: translate(0px);
+	}
+	50% {
+		transform: translate(40px, 30px);
+	}
+
+	100% {
+		transform: translate(0px);
 	}
 }
 
@@ -194,9 +277,15 @@ span {
 
 .about-text > h2,
 p {
+	padding-bottom: 15px;
+	padding-left: 15px;
 	@include mixins.laptop-and-smaller {
 		padding-bottom: 30px;
 	}
+}
+
+.about-btn {
+	margin-left: 15px;
 }
 
 .heading {

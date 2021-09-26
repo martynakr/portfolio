@@ -24,6 +24,7 @@ nav {
 		opacity: 0.98;
 		visibility: hidden;
 		padding: 0;
+		@include mixins.transition-ease;
 
 		&.open {
 			visibility: visible;
@@ -41,6 +42,16 @@ nav {
 			@include mixins.transition-ease;
 			&.open {
 				transform: translateY(0);
+			}
+
+			&__item {
+				transform: translateX(100vw);
+				@include mixins.transition-ease;
+
+				&.open {
+					transform: translateX(0);
+					@include mixins.transition-ease;
+				}
 			}
 		}
 	}
@@ -129,3 +140,9 @@ nav a:hover {
 		}
 	}
 }
+
+// @for $i from 1 through 4 {
+// 	.menu-nav__item:nth-child(#{$i}) {
+// 		transition-delay: ($i * 0.1s) + 0.15s;
+// 	}
+// }
