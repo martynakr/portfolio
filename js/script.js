@@ -42,22 +42,6 @@ function toggleMenu() {
   }
 
 
-  // Yellow circle movng on mouse move
-
-  // const yellowCircle = document.querySelector(".card__photo--bg");
-
-  // yellowCircle.addEventListener("mousemove", moveCircle);
-
-  // let circRight = false;
-
-  // function moveCircle () {
-  //   yellowCircle.classList.add('open');
-  // }
-
-  // function moveCircle () {
-  //   yellowCircle.classList.remove('open');
-  // }
-
 
   // fade ins
 

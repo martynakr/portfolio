@@ -40,6 +40,12 @@ nav {
 			overflow: hidden;
 			transform: translateY(-150%);
 			@include mixins.transition-ease;
+
+			@for $i from 1 through 4 {
+				.menu-nav__item:nth-child(#{$i}) {
+					transition-delay: ($i * 0.1s) + 0.15s;
+				}
+			}
 			&.open {
 				transform: translateY(0);
 			}
@@ -140,9 +146,3 @@ nav a:hover {
 		}
 	}
 }
-
-// @for $i from 1 through 4 {
-// 	.menu-nav__item:nth-child(#{$i}) {
-// 		transition-delay: ($i * 0.1s) + 0.15s;
-// 	}
-// }

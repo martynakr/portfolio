@@ -188,6 +188,18 @@ nav {
     transform: translateY(-150%);
     transition: all 0.4s ease-in-out;
   }
+  nav .menu-nav .menu-nav__item:nth-child(1) {
+    transition-delay: 0.25s;
+  }
+  nav .menu-nav .menu-nav__item:nth-child(2) {
+    transition-delay: 0.35s;
+  }
+  nav .menu-nav .menu-nav__item:nth-child(3) {
+    transition-delay: 0.45s;
+  }
+  nav .menu-nav .menu-nav__item:nth-child(4) {
+    transition-delay: 0.55s;
+  }
   nav .menu-nav.open {
     transform: translateY(0);
   }
@@ -561,9 +573,20 @@ p {
     padding-bottom: 30px;
   }
 }
+@media only screen and (max-width: 576px) {
+  .about-text > h2,
+p {
+    padding-left: 0px;
+  }
+}
 
 .about-btn {
   margin-left: 15px;
+}
+@media only screen and (max-width: 576px) {
+  .about-btn {
+    margin-left: 0px;
+  }
 }
 
 .heading--light {

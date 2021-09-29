@@ -282,10 +282,17 @@ p {
 	@include mixins.laptop-and-smaller {
 		padding-bottom: 30px;
 	}
+
+	@include mixins.phone {
+		padding-left: 0px;
+	}
 }
 
 .about-btn {
 	margin-left: 15px;
+	@include mixins.phone {
+		margin-left: 0px;
+	}
 }
 
 .heading {
@@ -368,8 +375,3 @@ p {
 		text-align: center;
 	}
 }
-
-// change nav to responsive
-
-// git push --all
-// git push origin develop
