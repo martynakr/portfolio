@@ -73,7 +73,7 @@ h4 {
 .project-card {
   display: flex;
   flex-direction: row;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   width: 100%;
 }
 .project-card--reverse {
@@ -83,6 +83,7 @@ h4 {
 @media only screen and (max-width: 1200px) {
   .project-card {
     flex-direction: column;
+    margin-bottom: 50px;
   }
 }
 
@@ -94,12 +95,13 @@ h4 {
     flex: 100%;
   }
 }
+.project-img--frame {
+  border: 1px solid #0012b4;
+}
 
 .project-img img {
   max-width: 100%;
-  /*takes 100% oof the div */
   display: flex;
-  /* remove extra space below image */
 }
 
 .project-caption {
