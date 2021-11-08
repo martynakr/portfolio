@@ -344,7 +344,7 @@ p {
 
 	@include mixins.tablet-and-smaller {
 		flex-direction: column;
-		@extend %flexbox-center-center; //doesn't work //
+		@extend %flexbox-center-center;
 	}
 }
 

@@ -43,10 +43,6 @@ function toggleMenu() {
 
 
 
-  // fade ins
-
-
-
 const faders = document.querySelectorAll(".fade-in")
 const sliders = document.querySelectorAll(".slide-in")
 
